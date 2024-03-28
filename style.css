@@ -12,10 +12,10 @@
 html,
 body,
 :root {
-  --blue: #065e7c;
-  --blue2: #387e96;
-  --textp: #121214;
-  --texth: #202024;
+  --blue: hsl(195, 91%, 25%);
+  --blue2: hsl(195, 46%, 40%);
+  --textp: hsl(240, 5%, 7%);
+  --texth: hsl(240, 6%, 13%);
 }
 
 body {
