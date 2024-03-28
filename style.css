@@ -1,0 +1,248 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+:root {
+  font-size: 62.5%;
+  font-family: "Mulish", sans-serif;
+}
+html,
+body,
+:root {
+  --blue: #065e7c;
+  --blue2: #387e96;
+  --textp: #121214;
+  --texth: #202024;
+}
+
+body {
+  font-size: 1.6rem;
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "main main main"
+    "aside aside aside"
+    "footer footer footer";
+  grid-template-rows: max-content 1fr 1fr max-content;
+}
+
+header {
+  display: flex;
+  gap: 2.6rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  grid-area: header;
+  margin: auto;
+  background-color: var(--blue);
+  padding: 1.2rem 2.8rem;
+  animation: hefo 0.8s;
+  --StartY: -100%;
+}
+
+@keyframes hefo {
+  0% {
+    transform: translateY(var(--StartY));
+  }
+}
+
+header img:hover {
+  animation: up 0.1s forwards;
+  cursor: pointer;
+}
+
+header form {
+  flex: 1;
+}
+
+header input {
+  width: 100%;
+  height: 4rem;
+  background-color: var(--blue2);
+  border: none;
+  border-radius: 0.4rem;
+  outline: none;
+  color: white;
+  padding: 1.2rem 1.4rem;
+  font-size: 1.6rem;
+}
+
+header ::placeholder {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+header img {
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+label {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+
+main {
+  grid-area: main;
+}
+
+main .img01 {
+  width: 100%;
+  height: 40rem;
+  object-fit: contain;
+}
+
+.title {
+  width: 34.5rem;
+  gap: 0.8rem;
+  margin: 3rem 0 0 2.4rem;
+}
+.gap {
+  display: flex;
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.gap img:hover {
+  animation: up 0.4s forwards;
+  cursor: pointer;
+}
+
+@keyframes up {
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+main .par {
+  max-width: 38rem;
+  margin: 3.2rem auto 0 2.4rem;
+}
+
+@media (min-width: 26em) {
+  main .par {
+    max-width: 60rem;
+  }
+}
+
+h1,
+h3 {
+  color: var(--texth);
+}
+
+p {
+  color: var(--textp);
+}
+
+p,
+h1,
+h3 {
+  line-height: 160%;
+}
+
+aside {
+  grid-area: aside;
+  width: 38.5rem;
+  margin: 3.4rem auto 0 2.4rem;
+  display: flex;
+  gap: 3.2rem;
+  flex-direction: column;
+}
+
+figure {
+  display: flex;
+  height: 8.4rem;
+  align-items: center;
+  filter: grayscale(50%);
+}
+
+figure img:hover {
+  animation: gatinho 0.4s forwards;
+  cursor: pointer;
+}
+
+@keyframes gatinho {
+  100% {
+    filter: saturate(280%);
+    transform: scale(1.2);
+  }
+}
+
+figcaption {
+  padding-left: 1.6rem;
+}
+
+figcaption h3 {
+  font-size: 1.8rem;
+}
+
+figcaption p {
+  font-size: 1.4rem;
+}
+
+footer {
+  grid-area: footer;
+  background: var(--blue2);
+  margin-top: 4rem;
+  padding: 1.6rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  animation: hefo 0.8s;
+  --StartY: 100%;
+}
+
+@media (min-width: 50.5em) {
+  body {
+    grid-template-areas:
+      "header header header"
+      "main main aside"
+      "footer footer footer";
+    position: relative;
+    min-height: 100vh;
+  }
+  main {
+    margin: 4rem 4rem 0 8rem;
+  }
+  main .img01 {
+    max-width: 80rem;
+    object-fit: cover;
+    margin-bottom: 3rem;
+  }
+  .title {
+    align-items: center;
+  }
+  .par,
+  .title {
+    width: 80rem;
+    height: 4rem;
+    display: flex;
+    gap: 25rem;
+    margin: 0;
+  }
+  main .par {
+    min-width: 80rem;
+    margin: 3rem 0;
+  }
+  .gap {
+    margin: 0;
+  }
+  footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+  }
+}
